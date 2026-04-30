@@ -8,10 +8,11 @@
 #include "headers/IOHIDEventSystem.h"
 
 #include <mach/mach_time.h>
+#import <UIKit/UIKit.h>
 
 #define kIOHIDEventDigitizerSenderID 0xDEFACEDBEEFFECE5
 
-@interface UIApplication() 
+@interface UIApplication()
 -(void)_enqueueHIDEvent:(IOHIDEventRef)arg1;
 @end
 

@@ -1,5 +1,6 @@
 #import "TouchSimulator.h"
 #import <UIKit/UIApplication.h>
+#import <UIKit/UIKit.h>
 #import <dlfcn.h>
 
 static void postEvent(IOHIDEventRef event);
@@ -42,33 +43,63 @@ void simulateTouch(int type, float x, float y) {
     execute();
 }
 
-static UIWindow* getKeyWindow() {
-    for (UIWindow *window in [UIApplication sharedApplication].windows) {
-        if (window.isKeyWindow) {
-            return window;
+static UIWindow *getKeyWindow(void) {
+    UIApplication *app = [UIApplication sharedApplication];
+    if (!app) return nil;
+    for (UIScene *scene in app.connectedScenes) {
+        if (![scene isKindOfClass:[UIWindowScene class]]) continue;
+        if (scene.activationState != UISceneActivationStateForegroundActive &&
+            scene.activationState != UISceneActivationStateForegroundInactive) continue;
+        UIWindowScene *ws = (UIWindowScene *)scene;
+        for (UIWindow *w in ws.windows) {
+            if (w.isKeyWindow) return w;
         }
+        if (ws.windows.count > 0) return ws.windows.firstObject;
     }
-    return NULL;
+    return nil;
 }
 
 static void postEvent(IOHIDEventRef event) {
     static IOHIDEventSystemClientRef ioSystemClient = nil;
-    UIWindow* keyWindow = getKeyWindow();
+    UIWindow *keyWindow = getKeyWindow();
+
+#ifdef DEBUG
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        UIApplication *app = [UIApplication sharedApplication];
+        BOOL hasEnqueue = [app respondsToSelector:@selector(_enqueueHIDEvent:)];
+        BOOL hasContextId = keyWindow ? [keyWindow respondsToSelector:@selector(_contextId)] : NO;
+        void *bsHandle = dlopen("/System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices", RTLD_NOW);
+        BOOL hasBKS = bsHandle ? (dlsym(bsHandle, "BKSHIDEventSetDigitizerInfo") != NULL) : NO;
+        NSLog(@"TouchSimulator-probe: _enqueueHIDEvent present=%d", (int)hasEnqueue);
+        NSLog(@"TouchSimulator-probe: _contextId present=%d", (int)hasContextId);
+        NSLog(@"TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=%d", (int)hasBKS);
+    });
+#endif
 
     if (ioSystemClient == NULL) {
         ioSystemClient = IOHIDEventSystemClientCreate(kCFAllocatorDefault);
     }
-    if (event != NULL && keyWindow != NULL) {
+
+    // UIKit enqueue path: delivers the touch to the target app's responder chain.
+    // keyWindow nil means no UIKit scene is ready yet — skip this path safely.
+    // execute() still calls CFRelease(parent) after returning, so no leak occurs here.
+    if (event != NULL && keyWindow != nil) {
         uint32_t contextID = keyWindow._contextId;
         void *handle = dlopen("/System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices", RTLD_NOW);
         if (handle) {
             typedef void (* BKSHIDEventSetDigitizerInfoType)(IOHIDEventRef,uint32_t,uint8_t,uint8_t,CFStringRef,CFTimeInterval,float);
-            //Pointer to private function BKSHIDEventSetDigitizerInfo in BackBoardServices
+            // BKSHIDEventSetDigitizerInfo 7-arg signature — pinned to WebKit main 2024 reference
             BKSHIDEventSetDigitizerInfoType digitizer = (BKSHIDEventSetDigitizerInfoType)dlsym(handle, "BKSHIDEventSetDigitizerInfo");
-            digitizer(event, contextID, false, false, NULL, 0, 0);
+            if (digitizer) {
+                digitizer(event, contextID, false, false, NULL, 0, 0);
+            }
             [[UIApplication sharedApplication] _enqueueHIDEvent:event];
         }
+    } else if (keyWindow == nil) {
+        NSLog(@"TouchSimulator: no key window available, skipping UIKit enqueue path");
     }
+
     IOHIDEventSetSenderID(event, kIOHIDEventDigitizerSenderID);
     IOHIDEventSystemClientDispatchEvent(ioSystemClient, event);
 }

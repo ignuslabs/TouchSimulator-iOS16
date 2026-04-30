@@ -1,0 +1,18 @@
+#!/bin/sh
+set -e
+# Detect which prefix this .deb's files were installed to.
+if [ -f /var/jb/Library/MobileSubstrate/DynamicLibraries/TouchSimulator.dylib ]; then
+  PKG_SCHEME=rootless
+else
+  PKG_SCHEME=rootful
+fi
+# Cross-check against the running jailbreak's filesystem.
+if [ -d /var/jb ] && [ "$PKG_SCHEME" = "rootful" ]; then
+  echo "TouchSimulator: rootful .deb installed on rootless system — uninstall and use the *_iphoneos-arm64.deb"
+  exit 1
+fi
+if [ ! -d /var/jb ] && [ "$PKG_SCHEME" = "rootless" ]; then
+  echo "TouchSimulator: rootless .deb installed on rootful system — uninstall and use the *_iphoneos-arm.deb"
+  exit 1
+fi
+exit 0

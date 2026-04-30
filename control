@@ -1,9 +1,9 @@
-Package: com.ryu.touchsimulator
+Package: com.ignuslabs.touchsimulator
 Name: TouchSimulator
-Version: 0.0.1
+Version: 0.1.0
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
-Maintainer: Ryu
-Author: Ryu
+Description: Synthesize touch events on iOS 14–16 (rootful + rootless jailbreaks).
+Maintainer: ignuslabs
+Author: ignuslabs (fork of Ryu0118)
 Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000)
+Depends: mobilesubstrate

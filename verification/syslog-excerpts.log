@@ -1,105 +1,105 @@
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:54.411595 assistivetouchd(   Choicy.dylib)[11394] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:54.411745 assistivetouchd(   Choicy.dylib)[11394] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:54.413853 assistivetouchd(TouchSimulator.dylib)[11394] <Notice>: TouchSimulator-demo: ctor in pid 11394
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:54.458186 SpringBoard(   Choicy.dylib)[11393] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:54.458276 SpringBoard(   Choicy.dylib)[11393] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:54.458862 SpringBoard(TouchSimulator.dylib)[11393] <Notice>: TouchSimulator-demo: ctor in pid 11393
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:55.646899 assistivetouchd(TouchSimulator.dylib)[11394] <Notice>: TouchSimulator-demo: registering becomeActive observer
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:56.922891 PosterBoard(   Choicy.dylib)[11397] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:56.922978 PosterBoard(   Choicy.dylib)[11397] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:56.923535 PosterBoard(TouchSimulator.dylib)[11397] <Notice>: TouchSimulator-demo: ctor in pid 11397
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-v4.log:May  5 15:14:58.403936 PosterBoard(TouchSimulator.dylib)[11397] <Notice>: TouchSimulator-demo: registering becomeActive observer
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:43.796861 assistivetouchd(   Choicy.dylib)[10790] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:43.797194 assistivetouchd(   Choicy.dylib)[10790] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:44.340492 PosterBoard(   Choicy.dylib)[10792] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:44.340618 PosterBoard(   Choicy.dylib)[10792] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.031889 GradientPosterExtension(TouchSimulator.dylib)[10795] <Notice>: TouchSimulator-demo: down(100,100)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.124200 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-demo: down(100,100)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.131044 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.131093 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.131136 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-demo: move(100,300)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.131321 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.131375 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-demo: up(100,300)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.132298 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.132484 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-demo: handReset begin
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.132527 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.132758 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-demo: handReset end
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:51.542483 CollectionsPoster(TouchSimulator.dylib)[10796] <Notice>: TouchSimulator-demo: down(100,100)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.135971 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.136016 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-probe: _contextId present=0
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.136090 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.136179 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.136225 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.136268 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-demo: move(100,300)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.136310 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.137002 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-demo: up(100,300)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.137496 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.137827 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-demo: handReset begin
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.138364 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us-004-syslog-handreset.log:May  5 15:05:52.138516 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-demo: handReset end
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:41.414121 assistivetouchd(   Choicy.dylib)[10708] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:45.497729 assistivetouchd(TouchSimulator.dylib)[10708] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:45.498910 assistivetouchd(TouchSimulator.dylib)[10708] <Notice>: TouchSimulator-probe: _contextId present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:45.498957 assistivetouchd(TouchSimulator.dylib)[10708] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:45.499098 assistivetouchd(TouchSimulator.dylib)[10708] <Notice>: TouchSimulator-probe: senderID=0x200000000000060
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:48.771812 PosterBoard(   Choicy.dylib)[10713] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:48.771954 PosterBoard(   Choicy.dylib)[10713] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:51.437918 SpringBoard(TouchSimulator.dylib)[10707] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:51.438164 SpringBoard(TouchSimulator.dylib)[10707] <Notice>: TouchSimulator-probe: _contextId present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:51.438826 SpringBoard(TouchSimulator.dylib)[10707] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:51.438929 SpringBoard(TouchSimulator.dylib)[10707] <Notice>: TouchSimulator-probe: senderID=0x200000000000060
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:52.168643 CollectionsPoster(   Choicy.dylib)[10716] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:52.169131 CollectionsPoster(   Choicy.dylib)[10716] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:53.174646 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:53.175565 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator-probe: _contextId present=0
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:53.175635 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:53.176090 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:53.176142 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:53.176186 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:53.176265 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:54.821186 Spotlight(   Choicy.dylib)[10726] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:54.823104 Spotlight(   Choicy.dylib)[10726] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.809465 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.809607 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator-probe: _contextId present=0
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.809726 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.810106 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.810181 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.810274 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.810318 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.840629 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.840784 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator-probe: _contextId present=0
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.840974 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.841241 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.841293 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.841337 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:55.841554 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.775937 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.776023 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator-probe: _contextId present=0
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.776078 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.776193 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.776276 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.776322 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.776399 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.776914 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.777065 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator-probe: _contextId present=0
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.777206 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.777250 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.777385 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.777479 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:56.777641 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:57.780196 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=0
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:57.780293 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator-probe: _contextId present=0
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:57.780452 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:57.780646 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:57.780844 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:57.781386 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:01:57.781611 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:02:06.605449 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=0
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:02:06.605622 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator-probe: _contextId present=0
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:02:06.605736 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:02:06.605904 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator-probe: senderID=0x200000000000060
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:02:06.606126 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:02:06.606292 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:02:06.607162 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:03:04.260080 KonaSynthesizer(   Choicy.dylib)[10760] <Debug>: TouchSimulator.dylib ✅ (allowed)
-/Users/joecorella/Documents/CodingProjects/iOS/.omc/evidence/us003-004-syslog.log:May  5 15:03:04.260272 KonaSynthesizer(   Choicy.dylib)[10760] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-v4.log:May  5 15:14:54.411595 assistivetouchd(   Choicy.dylib)[11394] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-v4.log:May  5 15:14:54.411745 assistivetouchd(   Choicy.dylib)[11394] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-v4.log:May  5 15:14:54.413853 assistivetouchd(TouchSimulator.dylib)[11394] <Notice>: TouchSimulator-demo: ctor in pid 11394
+us-004-syslog-v4.log:May  5 15:14:54.458186 SpringBoard(   Choicy.dylib)[11393] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-v4.log:May  5 15:14:54.458276 SpringBoard(   Choicy.dylib)[11393] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-v4.log:May  5 15:14:54.458862 SpringBoard(TouchSimulator.dylib)[11393] <Notice>: TouchSimulator-demo: ctor in pid 11393
+us-004-syslog-v4.log:May  5 15:14:55.646899 assistivetouchd(TouchSimulator.dylib)[11394] <Notice>: TouchSimulator-demo: registering becomeActive observer
+us-004-syslog-v4.log:May  5 15:14:56.922891 PosterBoard(   Choicy.dylib)[11397] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-v4.log:May  5 15:14:56.922978 PosterBoard(   Choicy.dylib)[11397] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-v4.log:May  5 15:14:56.923535 PosterBoard(TouchSimulator.dylib)[11397] <Notice>: TouchSimulator-demo: ctor in pid 11397
+us-004-syslog-v4.log:May  5 15:14:58.403936 PosterBoard(TouchSimulator.dylib)[11397] <Notice>: TouchSimulator-demo: registering becomeActive observer
+us-004-syslog-handreset.log:May  5 15:05:43.796861 assistivetouchd(   Choicy.dylib)[10790] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-handreset.log:May  5 15:05:43.797194 assistivetouchd(   Choicy.dylib)[10790] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-handreset.log:May  5 15:05:44.340492 PosterBoard(   Choicy.dylib)[10792] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-handreset.log:May  5 15:05:44.340618 PosterBoard(   Choicy.dylib)[10792] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us-004-syslog-handreset.log:May  5 15:05:51.031889 GradientPosterExtension(TouchSimulator.dylib)[10795] <Notice>: TouchSimulator-demo: down(100,100)
+us-004-syslog-handreset.log:May  5 15:05:51.124200 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-demo: down(100,100)
+us-004-syslog-handreset.log:May  5 15:05:51.131044 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
+us-004-syslog-handreset.log:May  5 15:05:51.131093 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us-004-syslog-handreset.log:May  5 15:05:51.131136 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-demo: move(100,300)
+us-004-syslog-handreset.log:May  5 15:05:51.131321 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us-004-syslog-handreset.log:May  5 15:05:51.131375 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-demo: up(100,300)
+us-004-syslog-handreset.log:May  5 15:05:51.132298 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us-004-syslog-handreset.log:May  5 15:05:51.132484 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-demo: handReset begin
+us-004-syslog-handreset.log:May  5 15:05:51.132527 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us-004-syslog-handreset.log:May  5 15:05:51.132758 ExtragalacticPoster(TouchSimulator.dylib)[10797] <Notice>: TouchSimulator-demo: handReset end
+us-004-syslog-handreset.log:May  5 15:05:51.542483 CollectionsPoster(TouchSimulator.dylib)[10796] <Notice>: TouchSimulator-demo: down(100,100)
+us-004-syslog-handreset.log:May  5 15:05:52.135971 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
+us-004-syslog-handreset.log:May  5 15:05:52.136016 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-probe: _contextId present=0
+us-004-syslog-handreset.log:May  5 15:05:52.136090 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
+us-004-syslog-handreset.log:May  5 15:05:52.136179 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
+us-004-syslog-handreset.log:May  5 15:05:52.136225 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us-004-syslog-handreset.log:May  5 15:05:52.136268 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-demo: move(100,300)
+us-004-syslog-handreset.log:May  5 15:05:52.136310 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us-004-syslog-handreset.log:May  5 15:05:52.137002 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-demo: up(100,300)
+us-004-syslog-handreset.log:May  5 15:05:52.137496 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us-004-syslog-handreset.log:May  5 15:05:52.137827 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-demo: handReset begin
+us-004-syslog-handreset.log:May  5 15:05:52.138364 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us-004-syslog-handreset.log:May  5 15:05:52.138516 PhotosPosterProvider(TouchSimulator.dylib)[10802] <Notice>: TouchSimulator-demo: handReset end
+us003-004-syslog.log:May  5 15:01:41.414121 assistivetouchd(   Choicy.dylib)[10708] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us003-004-syslog.log:May  5 15:01:45.497729 assistivetouchd(TouchSimulator.dylib)[10708] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
+us003-004-syslog.log:May  5 15:01:45.498910 assistivetouchd(TouchSimulator.dylib)[10708] <Notice>: TouchSimulator-probe: _contextId present=1
+us003-004-syslog.log:May  5 15:01:45.498957 assistivetouchd(TouchSimulator.dylib)[10708] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
+us003-004-syslog.log:May  5 15:01:45.499098 assistivetouchd(TouchSimulator.dylib)[10708] <Notice>: TouchSimulator-probe: senderID=0x200000000000060
+us003-004-syslog.log:May  5 15:01:48.771812 PosterBoard(   Choicy.dylib)[10713] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us003-004-syslog.log:May  5 15:01:48.771954 PosterBoard(   Choicy.dylib)[10713] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us003-004-syslog.log:May  5 15:01:51.437918 SpringBoard(TouchSimulator.dylib)[10707] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
+us003-004-syslog.log:May  5 15:01:51.438164 SpringBoard(TouchSimulator.dylib)[10707] <Notice>: TouchSimulator-probe: _contextId present=1
+us003-004-syslog.log:May  5 15:01:51.438826 SpringBoard(TouchSimulator.dylib)[10707] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
+us003-004-syslog.log:May  5 15:01:51.438929 SpringBoard(TouchSimulator.dylib)[10707] <Notice>: TouchSimulator-probe: senderID=0x200000000000060
+us003-004-syslog.log:May  5 15:01:52.168643 CollectionsPoster(   Choicy.dylib)[10716] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us003-004-syslog.log:May  5 15:01:52.169131 CollectionsPoster(   Choicy.dylib)[10716] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us003-004-syslog.log:May  5 15:01:53.174646 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
+us003-004-syslog.log:May  5 15:01:53.175565 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator-probe: _contextId present=0
+us003-004-syslog.log:May  5 15:01:53.175635 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
+us003-004-syslog.log:May  5 15:01:53.176090 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
+us003-004-syslog.log:May  5 15:01:53.176142 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:53.176186 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:53.176265 PosterBoard(TouchSimulator.dylib)[10713] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:54.821186 Spotlight(   Choicy.dylib)[10726] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us003-004-syslog.log:May  5 15:01:54.823104 Spotlight(   Choicy.dylib)[10726] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us003-004-syslog.log:May  5 15:01:55.809465 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
+us003-004-syslog.log:May  5 15:01:55.809607 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator-probe: _contextId present=0
+us003-004-syslog.log:May  5 15:01:55.809726 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
+us003-004-syslog.log:May  5 15:01:55.810106 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
+us003-004-syslog.log:May  5 15:01:55.810181 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:55.810274 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:55.810318 CollectionsPoster(TouchSimulator.dylib)[10716] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:55.840629 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
+us003-004-syslog.log:May  5 15:01:55.840784 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator-probe: _contextId present=0
+us003-004-syslog.log:May  5 15:01:55.840974 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
+us003-004-syslog.log:May  5 15:01:55.841241 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
+us003-004-syslog.log:May  5 15:01:55.841293 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:55.841337 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:55.841554 EmojiPosterExtension(TouchSimulator.dylib)[10719] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:56.775937 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
+us003-004-syslog.log:May  5 15:01:56.776023 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator-probe: _contextId present=0
+us003-004-syslog.log:May  5 15:01:56.776078 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
+us003-004-syslog.log:May  5 15:01:56.776193 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
+us003-004-syslog.log:May  5 15:01:56.776276 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:56.776322 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:56.776399 WeatherPoster(TouchSimulator.dylib)[10718] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:56.776914 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=1
+us003-004-syslog.log:May  5 15:01:56.777065 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator-probe: _contextId present=0
+us003-004-syslog.log:May  5 15:01:56.777206 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
+us003-004-syslog.log:May  5 15:01:56.777250 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
+us003-004-syslog.log:May  5 15:01:56.777385 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:56.777479 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:56.777641 PhotosPosterProvider(TouchSimulator.dylib)[10722] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:57.780196 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=0
+us003-004-syslog.log:May  5 15:01:57.780293 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator-probe: _contextId present=0
+us003-004-syslog.log:May  5 15:01:57.780452 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
+us003-004-syslog.log:May  5 15:01:57.780646 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator-probe: senderID=0xDEFACEDBEEFFECE5
+us003-004-syslog.log:May  5 15:01:57.780844 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:57.781386 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:01:57.781611 WeatherWidget(TouchSimulator.dylib)[10723] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:02:06.605449 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator-probe: _enqueueHIDEvent present=0
+us003-004-syslog.log:May  5 15:02:06.605622 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator-probe: _contextId present=0
+us003-004-syslog.log:May  5 15:02:06.605736 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator-probe: BKSHIDEventSetDigitizerInfo present=1
+us003-004-syslog.log:May  5 15:02:06.605904 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator-probe: senderID=0x200000000000060
+us003-004-syslog.log:May  5 15:02:06.606126 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:02:06.606292 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:02:06.607162 backupd(TouchSimulator.dylib)[10742] <Notice>: TouchSimulator: no key window available, skipping UIKit enqueue path
+us003-004-syslog.log:May  5 15:03:04.260080 KonaSynthesizer(   Choicy.dylib)[10760] <Debug>: TouchSimulator.dylib ✅ (allowed)
+us003-004-syslog.log:May  5 15:03:04.260272 KonaSynthesizer(   Choicy.dylib)[10760] <Debug>: TouchSimulator.dylib ✅ (allowed)

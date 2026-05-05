@@ -1,9 +1,9 @@
-# Ralph progress — TouchSimulator-iOS16 Option A + on-device demo
+# Progress notes — TouchSimulator-iOS16 Option A + on-device demo
 
 ## Iteration 0 (PRD setup)
 
 ### Discovery findings (do not re-discover next iteration)
-- Working dir is `/Users/joecorella/Documents/CodingProjects/iOS`. The project is at `TouchSimulator-iOS16/` (a sibling of `iPhone-SimTouch/` which contains `xxtouch-pulled/` and the API doc).
+- Working dir is `~/CodingProjects/iOS`. The project is at `TouchSimulator-iOS16/` (a sibling of `iPhone-SimTouch/` which contains `xxtouch-pulled/` and the API doc).
 - TouchSimulator-iOS16 IS a git repo, branch main, last commit 066ba50 ("feat: iOS 15/16 support with rootless builds").
 - Working tree has uncommitted hardening on TouchSimulator.h + TouchSimulator.xm. All 7 changes from porting.md verified present in source:
   1. discoverSenderID() reading Multitouch ID from IORegistry AppleMultitouchDevice (xm:15-27)
@@ -13,15 +13,15 @@
   5. Contact radius 5.0f mm (xm:82-83)
   6. dispatch_once HID client + IOHIDEventSystemClientScheduleWithRunLoop (xm:108-118)
   7. CFRelease(child) added (xm:85)
-- theos is at /Users/joecorella/theos (env confirmed).
+- theos is at ~/theos (env confirmed).
 - Existing artifacts in packages/ are pre-hardening 0.1.0 (com.ignuslabs.touchsimulator_0.1.0_{arm,arm64}.deb).
 - Plan at TouchSimulator-iOS16/.omc/plans/ios16-update.md defines AC-1..AC-12 and verification step list. AC-4, AC-5, AC-12 (the device-side ones) are the ones we are unblocking.
 
-### Device state (192.168.1.233)
+### Device state (<device-ip>)
 - iPhone X (iPhone10,3), iOS 16.7.12 build 20H364, **palera1n rootful** (no /var/jb, dpkg at /usr/bin).
 - Already has com.ignuslabs.touchsimulator 0.1.0 installed (pre-hardening build) — must be replaced by 0.1.1.
 - Has XXTouchLiteLoader.dylib also installed in /Library/MobileSubstrate/DynamicLibraries/ — separate tweak, not in conflict.
-- SSH credentials in /Users/joecorella/Documents/CodingProjects/iOS/deviceinfo.md (mobile / Core1602). Use `sshpass -p Core1602 ssh -o StrictHostKeyChecking=no mobile@192.168.1.233 ...` for non-interactive ops.
+- SSH credentials in ~/CodingProjects/iOS/deviceinfo.md (mobile / <device-password>). Use `sshpass -p <device-password> ssh -o StrictHostKeyChecking=no mobile@<device-ip> ...` for non-interactive ops.
 
 ### Demo strategy decided
 - TouchSimulator.plist Filter is `com.apple.UIKit` so the dylib loads into every UIKit app including SpringBoard.

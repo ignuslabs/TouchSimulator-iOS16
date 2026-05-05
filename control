@@ -1,6 +1,6 @@
 Package: com.ignuslabs.touchsimulator
 Name: TouchSimulator
-Version: 0.1.0
+Version: 0.1.2
 Architecture: iphoneos-arm
 Description: Synthesize touch events on iOS 14–16 (rootful + rootless jailbreaks).
 Maintainer: ignuslabs

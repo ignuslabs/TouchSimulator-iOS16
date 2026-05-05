@@ -10,8 +10,6 @@
 #include <mach/mach_time.h>
 #import <UIKit/UIKit.h>
 
-#define kIOHIDEventDigitizerSenderID 0xDEFACEDBEEFFECE5
-
 @interface UIApplication()
 -(void)_enqueueHIDEvent:(IOHIDEventRef)arg1;
 @end
@@ -27,5 +25,6 @@ enum {
 };
 
 void simulateTouch(int type, float x, float y);
+void simulateTouchHandReset(void);
 
 #endif

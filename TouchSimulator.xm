@@ -12,15 +12,16 @@ static uint64_t gSenderID = 0;
 // Read real Multitouch ID from IORegistry so the kernel accepts the event as
 // coming from the actual digitizer hardware. Falls back to the placeholder
 // 0xDEFACEDBEEFFECE5 (the upstream tweak's original constant) if the service
-// is unreachable (sandboxed processes such as PosterBoard / wallpaper
-// extensions are denied by sandbox; simulator / very early boot also miss
-// it). The placeholder path is preserved instead of refusing to dispatch
-// because: (1) the upstream tweak shipped that value for years and worked,
-// and (2) sandboxed processes never have a UIWindow anyway, so the dispatch
-// path falls through `getKeyWindow() == nil` and only fires the system-wide
-// IOHIDEventSystemClient send — which is the exact place the kernel doesn't
-// gate on senderID matching the digitizer service. A fallback hit is logged
-// once per process via the DEBUG probe (see TouchSimulatorInit).
+// is unreachable -- sandboxed processes such as PosterBoard and wallpaper
+// extensions are denied by sandbox; simulator and very early boot also miss
+// it. The placeholder is preserved instead of refusing to dispatch because
+// (1) the upstream tweak shipped that value for years and worked, and
+// (2) sandboxed processes have no UIWindow, so the dispatch path falls
+// through `getKeyWindow() == nil` and only fires the system-wide
+// IOHIDEventSystemClient send -- where the kernel does not gate on senderID
+// matching the digitizer service. The DEBUG probe in postEvent logs the
+// resolved senderID once per process so the IORegistry-vs-fallback outcome
+// is visible in syslog.
 static uint64_t discoverSenderID(void) {
     io_service_t service = IOServiceGetMatchingService(kIOMasterPortDefault,
         IOServiceMatching("AppleMultitouchDevice"));

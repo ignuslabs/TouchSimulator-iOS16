@@ -3,10 +3,10 @@
 
 // Demo: fire a slow visible swipe each time a UIKit scene becomes active.
 // Registration must happen on the main queue (UIKit notifications and the
-// dispatch_after timeline below both target it). We register synchronously
-// from %ctor and immediately catch the case where the scene is *already*
-// active at injection time, otherwise the observer would only fire on the
-// next activation.
+// dispatch_after timeline below both target it). The %ctor hops to main
+// asynchronously, registers the observer, and also fires once if the scene
+// is already active at injection time -- otherwise the observer would only
+// fire on the next activation.
 
 static const float kDemoStartX = 150.0f;
 static const float kDemoStartY = 300.0f;

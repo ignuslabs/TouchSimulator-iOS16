@@ -51,16 +51,14 @@ sshpass -p "$DEVICE_PW" ssh -o StrictHostKeyChecking=no mobile@<device-ip> \
     "echo \"$DEVICE_PW\" | sudo -S dpkg -i /tmp/ts.deb"
 ```
 
-### Why we ship 0.1.2 and not 0.1.1 — the dpkg-vs-TweakInject path detail
+### Why version bumps matter — the dpkg-vs-TweakInject path detail
 
-palera1n rootful uses **TweakInject** (a substrate-alternative) to inject dylibs. TweakInject scans `/usr/lib/TweakInject/` and decides at process spawn whether to load each `.dylib`. The `.deb` produced by theos installs into `/Library/MobileSubstrate/DynamicLibraries/`. A trigger or symlink on a palera1n rootful system mirrors entries from the Substrate path into `/usr/lib/TweakInject/` so both loaders see the file. **`lsof` on a running SpringBoard confirms the loaded path is `/usr/lib/TweakInject/TouchSimulator.dylib`**, not the Substrate path.
+palera1n rootful uses **TweakInject** to inject dylibs. TweakInject scans `/usr/lib/TweakInject/` at process spawn. The theos-built `.deb` installs into `/Library/MobileSubstrate/DynamicLibraries/`; a palera1n trigger mirrors the file into `/usr/lib/TweakInject/`. **`lsof` on a running SpringBoard confirms the loaded path is `/usr/lib/TweakInject/TouchSimulator.dylib`**, not the Substrate path.
 
-This means:
-
-- A **same-version** `dpkg -i` (e.g. `0.1.1` over `0.1.1`) replaces the file on disk, but TweakInject's per-tweak load cache may still treat the dylib as already-evaluated for some processes — observed first-hand: SpringBoard PID 10788 had zero Choicy decisions for TouchSimulator after a same-version replace, while assistivetouchd, PosterBoard, and wallpaper extensions all picked up the new dylib.
+- A **same-version** `dpkg -i` (e.g. `0.1.1` over `0.1.1`) replaces the file on disk, but TweakInject's per-tweak load cache may still treat the dylib as already-evaluated for some processes. Observed first-hand: SpringBoard PID 10788 had zero Choicy decisions for TouchSimulator after a same-version replace, while assistivetouchd, PosterBoard, and wallpaper extensions all picked up the new dylib.
 - A **version bump** (`0.1.1` → `0.1.2`) reliably forces a fresh injection across all UIKit processes.
 
-Practical guidance: when iterating on the dylib, bump the `Version:` field in `control` for every redeploy you actually want to verify on-device. Don't try to push two builds at the same version expecting `dpkg -i` to fully refresh injection.
+When iterating on the dylib, bump the `Version:` field in `control` for every redeploy you want to verify on-device. Two builds at the same version will not fully refresh injection.
 
 ## Respring (reloads the tweak into all UIKit processes)
 
@@ -73,7 +71,7 @@ sshpass -p "$DEVICE_PW" ssh -o StrictHostKeyChecking=no mobile@<device-ip> \
 
 ## Trigger the demo (after unlock)
 
-`Example.xm` registers a `UIApplicationDidBecomeActiveNotification` observer at injection time. **The demo fires whenever any UIKit scene becomes active** — most reliably when the user opens an app such as Photos or Calculator. If injection happens while the host process is already foreground-active, the observer fires immediately (so the demo also runs on first injection without waiting for a future activation).
+`Example.xm` registers a `UIApplicationDidBecomeActiveNotification` observer at injection time. **The demo fires whenever any UIKit scene becomes active** — most reliably when the user opens an app such as Photos or Calculator. If the host process is already foreground-active at injection time, the observer fires once immediately so first-injection runs the demo without waiting for the next activation.
 
 Each fire produces a smooth **downward swipe** from `(150, 300)` to `(150, 700)` over ~330 ms (10 incremental move events spaced 30 ms apart, scheduled via `dispatch_after` so the main queue is never blocked), followed by a `simulateTouchHandReset()` to flush the kernel touch tracker.
 
@@ -127,13 +125,13 @@ TouchSimulator-demo: done
 
 `discoverSenderID()` reads `Multitouch ID` from `AppleMultitouchDevice` in IORegistry. On the verified target it returns `0x200000000000060`. **Sandboxed processes** (PosterBoard, PhotosPosterProvider, wallpaper extensions, etc.) cannot reach that service through the sandbox profile and silently fall back to the placeholder `0xDEFACEDBEEFFECE5` — the upstream tweak's original constant.
 
-That fallback is intentional and not an error:
+The fallback is intentional:
 
 - The upstream tweak shipped that constant for years and produced working touches on iOS 14.
-- Sandboxed processes never have a `UIWindow` anyway. The hardened path detects that (`getKeyWindow() == nil`) and skips the UIKit-side `_enqueueHIDEvent:` route entirely. The remaining dispatch is via `IOHIDEventSystemClientDispatchEvent`, which is system-wide and not gated on senderID matching the digitizer service for the no-window case.
+- Sandboxed processes have no `UIWindow`. The hardened path detects that (`getKeyWindow() == nil`) and skips the UIKit-side `_enqueueHIDEvent:` route entirely. The remaining dispatch is via `IOHIDEventSystemClientDispatchEvent`, which is system-wide and not gated on senderID matching the digitizer service for the no-window case.
 - Refusing to dispatch when the service is unreachable would silently break injection into every wallpaper extension on the device for no functional gain.
 
-If you want to confirm the lookup succeeded for a particular process, build with `-DDEBUG=1` and grep the syslog for `TouchSimulator-probe: senderID=` — anything other than `0xDEFACEDBEEFFECE5` is the IORegistry-read value.
+To confirm the lookup succeeded for a particular process, build with `-DDEBUG=1` and grep the syslog for `TouchSimulator-probe: senderID=`. Any value other than `0xDEFACEDBEEFFECE5` is the IORegistry-read value.
 
 ## Evidence captured during initial verification
 
@@ -170,8 +168,8 @@ See `verification/progress.txt` for the full iteration narrative including diagn
 
 ## Notes on the hardening
 
-The 7 changes that bring this tweak's touch synthesis in line with WebKit's HIDEventGenerator and XXTouch's STHIDEventGenerator are documented inline in `TouchSimulator.xm`. Of note:
+The 7 changes aligning this tweak's touch synthesis with WebKit's HIDEventGenerator and XXTouch's STHIDEventGenerator are documented inline in `TouchSimulator.xm`. Highlights:
 
-- `discoverSenderID()` reads `Multitouch ID` from the IORegistry `AppleMultitouchDevice` service. On iPhone X iOS 16.7.12 it returns `0x200000000000060`. See the senderID policy section above for the fallback semantics.
-- The HID client is now `IOHIDEventSystemClientScheduleWithRunLoop`-scheduled on the main run loop. iOS 15+ silently drops events from unscheduled clients, so this was a hard requirement, not a polish.
-- The contact radius is `5.0f` mm. Anything sub-millimeter (the previous `0.04f`) can be classified as noise by Core Touch.
+- `discoverSenderID()` reads `Multitouch ID` from the IORegistry `AppleMultitouchDevice` service. On iPhone X iOS 16.7.12 it returns `0x200000000000060`. See the senderID policy section above for fallback semantics.
+- The HID client is `IOHIDEventSystemClientScheduleWithRunLoop`-scheduled on the main run loop. iOS 15+ silently drops events from unscheduled clients — a hard requirement, not a polish.
+- The contact radius is `5.0f` mm. Sub-millimeter contacts (the previous `0.04f`) can be classified as noise by Core Touch.

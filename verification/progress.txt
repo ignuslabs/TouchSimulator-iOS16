@@ -80,6 +80,21 @@
 - Final shipped version is 0.1.2 (not 0.1.1 as initially planned), because TweakInject required a real version bump to refresh its load cache after a same-version replacement.
 
 ### Idiosyncrasies of palera1n rootful for future contributors
-- idevicesyslog over network (`-n` with UDID) drops its lockdownd connection during SpringBoard respring; need to restart it after each respring to capture new SB activity. Plan around this when scripting verification.
-- `log` command is not present at `/usr/bin/log`. `idevicesyslog` from the host Mac is the only viable path for unified logging capture without device-side tooling.
-- The phone's SSH `mobile` user uses zsh which does not expand the `[X]` glob trick used in macOS scripts (`ps -A | grep [S]pringBoard`). Use `bash -c "..."` or simple `grep SpringBoard | grep -v grep` instead.
+- idevicesyslog over network (`-n` with UDID) drops its lockdownd connection during SpringBoard respring; restart it after each respring to capture new SB activity.
+- `log` command is not present at `/usr/bin/log`. `idevicesyslog` from the host Mac is the only path for unified logging capture without device-side tooling.
+- The phone's SSH `mobile` user uses zsh, which does not expand the `[X]` glob trick used in macOS scripts (`ps -A | grep [S]pringBoard`). Use `bash -c "..."` or `grep SpringBoard | grep -v grep` instead.
+
+## Iteration 2 (codex critic feedback addressed)
+
+Codex returned REJECT on the first review with six must-fix items. Addressed in commit `1ecd3b1`:
+
+1. Evidence files were only under `.omc/` (gitignored). Added tracked `verification/` directory holding this file plus `verification/syslog-excerpts.log`. DEMO.md gained an inline "Evidence captured during initial verification" section quoting the key probe / Choicy / safe-path lines.
+2. Demo could miss activation when injection happened into an already-foreground process. Example.xm now registers the observer immediately on the main queue from %ctor and fires once with trigger label `already-active-at-inject` if `UIApplicationStateActive` is already true.
+3. DEMO.md's expected log lines / coordinates did not match the code (`(100,100)→(100,300)` vs the code's `(150,300)→(150,700)`). DEMO.md synced to the actual code.
+4. DEMO.md missed the dpkg-vs-TweakInject path detail. Added a dedicated section.
+5. Example.xm blocked the main queue ~300 ms per activation via `usleep(30000) × 10` inside a single dispatch_after block. Replaced with a per-step `dispatch_after` chain on the main queue at +30/+60/.../+330 ms; main queue is no longer blocked for the demo.
+6. senderID fallback was undocumented. Expanded the comment in `discoverSenderID()` and added a "senderID policy" section to DEMO.md.
+
+Bumped version 0.1.2 → 0.1.3 because TweakInject's per-tweak load cache may not refresh on a same-version `dpkg -i` (same root cause as the 0.1.1 → 0.1.2 bump).
+
+Codex re-reviewed the three-commit stack and returned **APPROVE**. Final shipped version is 0.1.3.

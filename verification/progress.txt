@@ -1,0 +1,85 @@
+# Ralph progress — TouchSimulator-iOS16 Option A + on-device demo
+
+## Iteration 0 (PRD setup)
+
+### Discovery findings (do not re-discover next iteration)
+- Working dir is `/Users/joecorella/Documents/CodingProjects/iOS`. The project is at `TouchSimulator-iOS16/` (a sibling of `iPhone-SimTouch/` which contains `xxtouch-pulled/` and the API doc).
+- TouchSimulator-iOS16 IS a git repo, branch main, last commit 066ba50 ("feat: iOS 15/16 support with rootless builds").
+- Working tree has uncommitted hardening on TouchSimulator.h + TouchSimulator.xm. All 7 changes from porting.md verified present in source:
+  1. discoverSenderID() reading Multitouch ID from IORegistry AppleMultitouchDevice (xm:15-27)
+  2. Public simulateTouchHandReset() (xm:31-44, h:28)
+  3. Parent event mask = Range|Touch|Position|Identity (xm:50-53)
+  4. Child event mask always sets Identity, plus Touch/Range/Position by type (xm:68-72)
+  5. Contact radius 5.0f mm (xm:82-83)
+  6. dispatch_once HID client + IOHIDEventSystemClientScheduleWithRunLoop (xm:108-118)
+  7. CFRelease(child) added (xm:85)
+- theos is at /Users/joecorella/theos (env confirmed).
+- Existing artifacts in packages/ are pre-hardening 0.1.0 (com.ignuslabs.touchsimulator_0.1.0_{arm,arm64}.deb).
+- Plan at TouchSimulator-iOS16/.omc/plans/ios16-update.md defines AC-1..AC-12 and verification step list. AC-4, AC-5, AC-12 (the device-side ones) are the ones we are unblocking.
+
+### Device state (192.168.1.233)
+- iPhone X (iPhone10,3), iOS 16.7.12 build 20H364, **palera1n rootful** (no /var/jb, dpkg at /usr/bin).
+- Already has com.ignuslabs.touchsimulator 0.1.0 installed (pre-hardening build) — must be replaced by 0.1.1.
+- Has XXTouchLiteLoader.dylib also installed in /Library/MobileSubstrate/DynamicLibraries/ — separate tweak, not in conflict.
+- SSH credentials in /Users/joecorella/Documents/CodingProjects/iOS/deviceinfo.md (mobile / Core1602). Use `sshpass -p Core1602 ssh -o StrictHostKeyChecking=no mobile@192.168.1.233 ...` for non-interactive ops.
+
+### Demo strategy decided
+- TouchSimulator.plist Filter is `com.apple.UIKit` so the dylib loads into every UIKit app including SpringBoard.
+- Example.xm has a 4-second dispatch_after that fires DOWN(100,100) → MOVE(100,300) → UP. So respringing automatically triggers a demo touch on SpringBoard 4 seconds after respring. No additional harness binary needed.
+- Evidence capture: `log stream` over SSH (or idevicesyslog locally) filtered to "TouchSimulator". Save to .omc/evidence/.
+
+### Decisions made
+- Build the rootful .deb (iphoneos-arm) since target device is rootful palera1n. build.sh produces both rootful + rootless, but only rootful gets deployed.
+- Bump control Version 0.1.0 → 0.1.1 to make dpkg replacement unambiguous and to mark the "with-hardening" build distinctly.
+- Add a brief DEMO.md as a follow-up commit so the hardening commit stays focused.
+- Codex critic (--critic codex) is the approval gate per user flag.
+
+### Open questions resolved at start
+- Device reachable: YES (uname returned successfully).
+- Existing tweak install on device: YES (0.1.0 from before hardening).
+- Working tree is the right place to make changes: YES (git repo with the uncommitted diff).
+- Whether senderID will be the IORegistry value or the 0xDEFACED placeholder on iPhone X: UNKNOWN, will be observed in US-004 and accepted either way (it is not the goal of this task to make the IORegistry call succeed if Apple's gating prevents it on this OS — the touch path works either way per the original implementation).
+
+## Iteration 1 (US-001 → US-004 verified on device)
+
+### Build artifacts
+- Built rootful + rootless .deb at versions 0.1.1 and 0.1.2. The 0.1.2 build is the one that produced visible touches on-device.
+- Reason for 0.1.2: same-version dpkg -i (0.1.1 over 0.1.1) did NOT cause palera1n's TweakInject to re-inject the new dylib into SpringBoard PID 10788. Bumping to 0.1.2 forced a real package upgrade, after which all UIKit processes loaded the fresh dylib.
+- Linker emits a benign `ld: warning: -multiply_defined is obsolete` — not a deprecated-API warning, ignored per AC-6.
+
+### Symbol verification (US-001 AC)
+- `xcrun dyld_info -exports .theos/obj/TouchSimulator.dylib` lists `__Z13simulateTouchiff` and `__Z22simulateTouchHandResetv` (C++-mangled) on both arm64 and arm64e slices. `nm -gU` had returned empty earlier because of the mangling — substantively the symbols are exported.
+
+### Device platform notes (palera1n rootful)
+- The tweak gets installed by dpkg into `/Library/MobileSubstrate/DynamicLibraries/TouchSimulator.dylib` but **palera1n loads it from `/usr/lib/TweakInject/TouchSimulator.dylib`**. lsof on SpringBoard confirms `txt REG ... /usr/lib/TweakInject/TouchSimulator.dylib`. Some trigger or symlink keeps the two locations in sync — sizes and SHA-256 match across both paths post-install. Document this in DEMO.md so future maintainers don't chase the wrong path.
+- Choicy (a tweak loader gate) emits `Checking whether TouchSimulator.dylib should be loaded... ✅ (allowed)` per process. Verified for SpringBoard, assistivetouchd, PosterBoard, GradientPosterExtension, ExtragalacticPoster, CollectionsPoster, PhotosPosterProvider, EmojiPosterExtension, WeatherPoster.
+
+### iOS 16.7.12 hardening verification (US-003 + US-004)
+- All four DEBUG probe lines fired in SpringBoard (PID 10707, first respring) and assistivetouchd (PID 10708): `_enqueueHIDEvent present=1`, `_contextId present=1`, `BKSHIDEventSetDigitizerInfo present=1`, `senderID=0x200000000000060`.
+- senderID `0x200000000000060` is the real IORegistry-discovered Multitouch ID on this device (NOT the placeholder), confirming `discoverSenderID()` succeeded.
+- Sandboxed wallpaper extensions (PosterBoard, PhotosPosterProvider, etc.) correctly fall back to placeholder `0xDEFACEDBEEFFECE5` and hit the no-key-window safe path — exactly the behavior the hardening's nil-window guard is designed to produce.
+- `simulateTouchHandReset()` survived without crash in every process where Example.xm exercised it.
+- SpringBoard PID stable across 35s observation window post-respring (no crashes).
+- No `dlopen|dyld|unrecognized selector` lines in the captured syslog referencing TouchSimulator.
+
+### Demo trigger redesign (US-004 visible touch)
+- The original Example.xm fired a 4-second `dispatch_after` timer in `%ctor`. On a respring, that timer expires DURING SpringBoard's lock-screen launch — the user unlocks AFTER and never sees the touch.
+- Rewrote Example.xm to register a `UIApplicationDidBecomeActiveNotification` observer 1s after ctor; on each scene activation, runs a smooth 10-step swipe from (150,300) to (150,700) over ~330ms, followed by `simulateTouchHandReset()`. This fires every time any UIKit app comes to foreground — visible to the user during normal navigation.
+- User confirmed visible touch in the Photos app on iPhone X iOS 16.7.12: "It's working! When I open the photo's app it works".
+
+### Evidence files saved
+- .omc/evidence/us003-004-syslog.log — first respring, original 4-second-timer demo (0.1.1 with -DDEBUG=1).
+- .omc/evidence/us-004-syslog-handreset.log — second respring, hand-reset narration confirmed (0.1.1, same-version dpkg replace, substrate did NOT re-inject SB so this run lacks SB lines).
+- .omc/evidence/us-004-syslog-v3.log — 0.1.2 deploy capture (died at 0.6s after respring — idevicesyslog lockdown connection breaks during respring storms; recurring issue).
+- .omc/evidence/us-004-syslog-v4.log — 0.1.2 third respring; captured ctor + observer-registration lines for SB, assistivetouchd, PosterBoard before connection died at 5s.
+- .omc/evidence/us-004-syslog-v5.log — live captures of post-unlock app activations (Photos test).
+
+### Decisions made during iteration
+- Added `-DDEBUG=1` to TouchSimulator_CFLAGS in Makefile for verification probes; reverted before committing US-005 since it's instrumentation, not production code.
+- Example.xm's redesigned demo (activation-driven, smooth swipe, hand-reset call) ships as part of US-006 (demo enhancement + DEMO.md), separate from US-005 (hardening commit).
+- Final shipped version is 0.1.2 (not 0.1.1 as initially planned), because TweakInject required a real version bump to refresh its load cache after a same-version replacement.
+
+### Idiosyncrasies of palera1n rootful for future contributors
+- idevicesyslog over network (`-n` with UDID) drops its lockdownd connection during SpringBoard respring; need to restart it after each respring to capture new SB activity. Plan around this when scripting verification.
+- `log` command is not present at `/usr/bin/log`. `idevicesyslog` from the host Mac is the only viable path for unified logging capture without device-side tooling.
+- The phone's SSH `mobile` user uses zsh which does not expand the `[X]` glob trick used in macOS scripts (`ps -A | grep [S]pringBoard`). Use `bash -c "..."` or simple `grep SpringBoard | grep -v grep` instead.
